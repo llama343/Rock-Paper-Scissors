@@ -1,35 +1,32 @@
+//get user input 'rock, paper, scissors' / store answer in "const answer"
+
+function getInput() {
+    let answer = prompt('Please select rock, paper, or scissors');
+    return answer;
+}
+
+const answer = getInput();
+
+
+
 
 //Get a random floating point value, return rock, paper, or scissors
 function computerPlay() {
   let number = Math.random();
     if (number <= .333333) {
-        return ('Rock!');
+        return ('rock');
     } else if (number <= .66666) {
-        return ('Paper!');
+        return ('paper');
     } else  {
-        return ('Scissors!');
+        return ('scissors');
     }   
     
 }
 
+console.log(computerPlay());
 
 
 
-
-//playing 1 round, displaying if win or lose
-function playRound(playerSelection, computerSelection) {
-    if (playerSelection === 'rock' && computerSelection === 'Scissors!') {
-        console.log('You win!');
-    } else {
-        console.log('You lose');
-    }
-    
-}
-
-const playerSelection ='rock';
-const computerSelection = computerPlay();
-
-console.log(playRound('rock', computerSelection));
 
 
 
