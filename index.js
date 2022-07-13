@@ -1,7 +1,7 @@
 //get user input 'rock, paper, scissors' / store answer in "const answer"
 
 function getInput() {
-    return prompt('Please select rock, paper, or scissors');
+    return prompt('Please select rock, paper, or scissors').toLowerCase();
     
 }
 //storing userInput
@@ -30,20 +30,20 @@ console.log(computerAnswer);
 //playing one round
 function playRound(answer, computerAnswer) {
     if (answer === 'rock' && computerAnswer === 'scissors') {
-        return ('You win!');
+        return ('You win! Rock beats scissors');
     } else if(answer === 'paper' && computerAnswer === 'rock') {
-        return ('You win!');
+        return ('You win! Paper beats rock');
     } else if (answer === 'scissors' && computerAnswer === 'paper') {
-        return ('You win!');
+        return ('You win! Scissors beats paper');
     } else if (answer === computerAnswer) {
-        return ('You tie!');
+        return ('You tie! You chose the same thing!!');
     } else {
-        return ('You lose!');
+        return ('You lose! Try again');
     }
     
 }
 
-
+const oneRound = playRound(answer, computerAnswer);
 console.log (playRound(answer, computerAnswer));
 
 
