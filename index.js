@@ -1,4 +1,4 @@
-let score = 0;
+let draws = 0;
 let playerScore = 0;
 let computerScore = 0;
 let playerWinRound = "Player wins this round!"
@@ -53,9 +53,12 @@ function playRound(answer, computerAnswer) {
 let roundResult = playRound(answer, computerAnswer);
 console.log(roundResult);
 
+console.log ('Your score is ' + playerScore);
+console.log('The computer score is ' + computerScore);
 
 
 
+//for loop plays mutliple rounds
 for (let i = 0; i < 1000; i++) {
     let answer = playerChoice();
     console.log(answer);
@@ -63,10 +66,34 @@ for (let i = 0; i < 1000; i++) {
     console.log(computerAnswer);
     let roundResult = playRound(answer, computerAnswer);
     console.log(roundResult);
+    gameScore(roundResult);
+    console.log ('Your score is ' + playerScore);
+    console.log('The computer score is ' + computerScore);
+
+    if (playerScore === 5 || computerScore === 5) {
+        break;
+    }
 
      
 }
 
+//adds points
+function gameScore(roundResult) {
+    if (roundResult === playerWinRound) {
+        playerScore++;
+    } else if (roundResult === draw) {
+        draws++;
+    } else {
+        computerScore++;
+    }
+//stops game if score is reached
+    if (playerScore === 5) {
+        console.log(playerWin);
+        return;
+    }
 
-
-
+    if (computerScore === 5) {
+        console.log(computerWin);
+        return;
+    }
+}
